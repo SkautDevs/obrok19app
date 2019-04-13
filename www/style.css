@@ -62,6 +62,7 @@
 
 :root {
 	--color-base: #2a9272;
+	--color-darker: #1e6650;
 	--color-primary: #96201f;
 	--text-base: #444343;
 	--text-invert: #FFFFFF;
@@ -95,6 +96,7 @@ a.menu-link {
 
 a.menu-link:hover {
 	border-radius: 4px;
+	background-color: var(--color-darker);
 }
 
 main {
@@ -152,4 +154,8 @@ button.button-primary {
 	background-color: var(--color-primary);
 	color: var(--text-invert);
 	border-radius: 4px;
+}
+
+.hide {
+	display: none;
 }

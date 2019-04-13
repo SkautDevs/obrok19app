@@ -2,8 +2,18 @@
 
 {% block content %}
 	<img class="logo" src="images/logo_light.png">
-	<p>Vítejte v oficiální aplikaci Obroku 2019!</p>
+	<p>Vítej v oficiální aplikaci Obroku 2019!</p>
 	<img class="logo" src="images/SKAUT_horizontalni_logo.svg">
 	<p>Obrok 19 pořádá <a href="https://www.skaut.cz/">Junák - český skaut</a></p>
-	<button class="button-primary pure-button pure-button-primary">Aktivuj si notifikace o akci!</button>
+	<div id="notification-info" class="hide">
+		<button class="button-primary pure-button pure-button-primary" onclick="mainNotification()">
+			Aktivuj si notifikace o akci!
+		</button>
+		<p>Notifikace ti připomenou hlavní program deset minut před ním, takže budeš mít vždycky přehled!</p>
+	</div>
+	<script>
+		if (Notification.permission === 'default') {
+			document.getElementById('notification-info').classList.remove('hide');
+		}
+	</script>
 {% endblock %}
