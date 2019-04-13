@@ -26,7 +26,7 @@ const showLocalNotification = (title, body, swRegistration) => {
 	const options = {
 		'body': body,
 		'icon': 'images/Obrok19_minilogo.png',
-		'badge': 'images/Obrok19_minilogo.png',
+		'badge': 'images/Obrok19_microbadge.png',
 		'vibrate': [
 			150, 50, 150, 50, 150, 150, // O
 			150, 50, 50, 50, 50, 50, 50, 150, // B
