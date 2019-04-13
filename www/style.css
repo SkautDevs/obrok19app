@@ -63,15 +63,15 @@
 :root {
 	--color-base: #2a9272;
 	--color-primary: #96201f;
-	--color-highlight: #636363;
-	--text-base: #030303;
+	--text-base: #444343;
 	--text-invert: #FFFFFF;
 }
 
 .highlight {
 	background-color: var(--color-base);
 	color: var(--text-invert);
-	padding: 4px 8px;
+	padding: 8px 16px;
+	border-radius: 4px;
 }
 
 body {
@@ -90,7 +90,11 @@ div.menu {
 }
 
 a.menu-link {
-	color: var(--text-base);
+	color: var(--text-invert);
+}
+
+a.menu-link:hover {
+	border-radius: 4px;
 }
 
 main {
@@ -100,6 +104,7 @@ main {
 footer {
 	overflow: hidden;
 	background-color: var(--color-base);
+	color: var(--text-invert);
 	margin-top: 8px;
 	padding: 8px 0;
 }
@@ -118,22 +123,25 @@ h1 {
 	font-family: skautbold, sans-serif;
 	font-weight: normal;
 	font-size: 10vmin;
+	color: #1e6650;
 }
 
 h2 {
 	font-weight: 700;
 	font-size: 8vmin;
+	color: #1e6650;
 }
 
 h3 {
 	font-weight: 700;
 	font-size: 6vmin;
+	color: #1e6650;
 }
 
 p {
 	font-weight: 400;
 	font-style: normal;
-	font-size: 17px;
+	font-size: 16px;
 }
 
 b {
@@ -143,4 +151,5 @@ b {
 button.button-primary {
 	background-color: var(--color-primary);
 	color: var(--text-invert);
+	border-radius: 4px;
 }
