@@ -1,10 +1,12 @@
 {% extends "_layout.twig" %}
 
+{% block highlight %}programs{% endblock %}
+
 {% block content %}
 	<h1>Programy</h1>
 	{% for s in sections %}
 		<div class="section">
-			<h2 class="sectionName">{{ s['sectionName'] }}</h2>
+			<h2 class="sectionName" onclick="">{{ s['sectionName'] }}</h2>
 			{% for p in s['programs'] %}
 				<div class="program">
 					<h3>{{ p['name'] }}</h3>

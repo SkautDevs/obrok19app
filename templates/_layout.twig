@@ -20,15 +20,27 @@
 	<script src="notifications.js"></script>
 </head>
 <body>
-<div class="menu pure-menu pure-menu-horizontal pure-menu-scrollable">
-	<ul class="pure-menu-list">
-		<li class="pure-menu-item"><a href="{{ link('homepage') }}" class="menu-link pure-menu-link">Obrok19</a></li>
-		<li class="pure-menu-item"><a href="{{ link('news') }}" class="menu-link pure-menu-link">Novinky</a></li>
-		<li class="pure-menu-item"><a href="{{ link('map') }}" class="menu-link pure-menu-link">Mapa</a></li>
-		<li class="pure-menu-item"><a href="{{ link('programs') }}" class="menu-link pure-menu-link">Programy</a></li>
-		<li class="pure-menu-item"><a href="{{ link('links') }}" class="menu-link pure-menu-link">Odkazy</a></li>
-	</ul>
-</div>
+<header>
+	<div class="menu pure-menu pure-menu-horizontal pure-menu-scrollable" id="{% block highlight %}{% endblock %}">
+		<ul class="pure-menu-list">
+			<li class="pure-menu-item"><a href="{{ link('homepage') }}"
+										  class="menu-item-homepage menu-link pure-menu-link">Obrok19</a>
+			</li>
+			<li class="pure-menu-item"><a href="{{ link('news') }}"
+										  class="menu-item-news menu-link pure-menu-link">Novinky</a>
+			</li>
+			<li class="pure-menu-item"><a href="{{ link('map') }}"
+										  class="menu-item-map menu-link pure-menu-link">Mapa</a>
+			</li>
+			<li class="pure-menu-item"><a href="{{ link('programs') }}"
+										  class="menu-item-programs menu-link pure-menu-link">Programy</a>
+			</li>
+			<li class="pure-menu-item"><a href="{{ link('links') }}"
+										  class="menu-item-links menu-link pure-menu-link">Odkazy</a>
+			</li>
+		</ul>
+	</div>
+</header>
 <main>
 	{% block content %}{% endblock %}
 </main>
