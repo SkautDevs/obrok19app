@@ -9,10 +9,6 @@ $app->get('/novinky', function(Request $request, Response $response, array $args
 })->setName('news');
 
 $app->get('/mapa', function(Request $request, Response $response, array $args) {
-	// Sample log message
-	$this->logger->info('Route map');
-
-	// Render index view
 	return $this->view->render($response, 'map.twig', $args);
 })->setName('map');
 
@@ -24,10 +20,14 @@ $app->get('/odkazy', function(Request $request, Response $response, array $args)
 	return $this->view->render($response, 'links.twig', $args);
 })->setName('links');
 
-$app->get('/', function(Request $request, Response $response, array $args) {
-	// Sample log message
-	$this->logger->info('Route /');
+$app->post('/save-subscription', function(Request $request, Response $response, array $args) {
+	$json = json_decode($request->getBody(), true);
 
-	// Render index view
+	// save substription
+
+	return $response->withJson(['message' => 'success']);
+});
+
+$app->get('/', function(Request $request, Response $response, array $args) {
 	return $this->view->render($response, 'homepage.twig', $args);
 })->setName('homepage');
