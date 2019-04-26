@@ -72,7 +72,7 @@
 	background-color: var(--color-base);
 	color: var(--text-invert);
 	padding: 8px 16px;
-	border-radius: 4px;
+	border-radius: 8px;
 }
 
 body {
@@ -95,7 +95,7 @@ a.menu-link {
 }
 
 a.menu-link:hover {
-	border-radius: 4px;
+	border-radius: 8px;
 	background-color: var(--color-darker);
 }
 
@@ -111,9 +111,28 @@ footer {
 	padding: 8px 0;
 }
 
+footer a:visited {
+	color: var(--text-invert);
+}
+
 div.map {
-	width: 100%;
-	height: 100%;
+	height: calc(100% - 38px - 35px);
+}
+
+div.section {
+	margin: 0 8px;
+}
+
+div.program {
+	border: 4px solid var(--color-base);
+	border-radius: 8px;
+	margin-bottom: 8px;
+}
+
+div.news {
+	border: 4px solid var(--color-base);
+	border-radius: 8px;
+	margin: 0 8px 8px;
 }
 
 img.logo {
@@ -132,6 +151,13 @@ h2 {
 	font-weight: 700;
 	font-size: 8vmin;
 	color: #1e6650;
+}
+
+h2.sectionName {
+	background-color: var(--color-base);
+	color: var(--text-invert);
+	padding: 8px 0;
+	border-radius: 8px;
 }
 
 h3 {
@@ -153,7 +179,7 @@ b {
 button.button-primary {
 	background-color: var(--color-primary);
 	color: var(--text-invert);
-	border-radius: 4px;
+	border-radius: 8px;
 }
 
 .hide {

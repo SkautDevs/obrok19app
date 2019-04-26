@@ -2,5 +2,21 @@
 
 {% block content %}
 	<h1>Programy</h1>
-	Here will be programs, freshly baked from api!
+	{% for s in sections %}
+		<div class="section">
+			<h2 class="sectionName">{{ s['sectionName'] }}</h2>
+			{% for p in s['programs'] %}
+				<div class="program">
+					<h3>{{ p['name'] }}</h3>
+					<p><i>{{ p['startDatetime'] }} - {{ p['endDatetime'] }}</i>
+					</p>
+					<p><b>{{ p['place'] }}</b></p>
+					<p>{{ p['perex'] }}</p>
+					{% if (p['lector']) %}<p>{{ p['lector'] }}</p>{% endif %}
+					<p>Obsazeno {{ p['seatsTaken'] }} ze {{ p['capacity'] }}</p>
+					{% if (p['bringAlong']) %}<p>Sebou: {{ p['bringAlong'] }}</p>{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+	{% endfor %}
 {% endblock %}
