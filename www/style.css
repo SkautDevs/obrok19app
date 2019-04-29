@@ -106,6 +106,7 @@ footer {
 #news .menu-item-news,
 #map .menu-item-map,
 #programs .menu-item-programs,
+#handbook .menu-item-handbook,
 #links .menu-item-links {
 	background-color: var(--color-primary);
 }
@@ -128,7 +129,7 @@ footer a, footer a:visited {
 	color: var(--text-invert);
 }
 
-div.map {
+div.map,  div.handbook {
 	height: calc(100% - 38px - 35px);
 }
 

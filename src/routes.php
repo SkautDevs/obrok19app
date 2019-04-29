@@ -36,6 +36,10 @@ $app->get('/odkazy', function(Request $request, Response $response, array $args)
 	return $this->view->render($response, 'links.twig', $args);
 })->setName('links');
 
+$app->get('/handbook', function(Request $request, Response $response, array $args) {
+	return $this->view->render($response, 'handbook.twig', $args);
+})->setName('handbook');
+
 $app->post('/save-subscription', function(Request $request, Response $response, array $args) {
 	$json = json_decode($request->getBody(), true);
 
