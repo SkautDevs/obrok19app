@@ -131,6 +131,7 @@ footer a, footer a:visited {
 
 div.map,  div.handbook {
 	height: calc(100% - 38px - 35px);
+	height: -webkit-calc(100vh - 180px);
 }
 
 div.section {
