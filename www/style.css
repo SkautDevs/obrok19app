@@ -116,7 +116,7 @@ div.menu {
 	background-color: var(--color-base);
 }
 
-a.menu-link {
+img.menu-link, a.menu-link {
 	border-radius: 8px;
 	color: var(--text-invert);
 }
@@ -160,11 +160,23 @@ img.logo {
 	max-height: 40ch;
 }
 
+img.mainLogo {
+	margin-bottom: -24px;
+}
+
+img.menulogo {
+	height: 19px;
+}
+
 h1 {
 	font-family: skautbold, sans-serif;
 	font-weight: normal;
 	font-size: 10vmin;
 	color: #1e6650;
+}
+
+h1.underPicture {
+	margin-top: -16px;
 }
 
 h2 {
