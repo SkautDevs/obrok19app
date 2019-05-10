@@ -2,23 +2,43 @@
 
 {% block highlight %}programs{% endblock %}
 
+{% block header %}
+	<script type="text/javascript">
+		function toggle_visibility(id) {
+			let e = document.getElementById(id);
+			if (e.style.display === 'none')
+				e.style.display = 'inherit';
+			else
+				e.style.display = 'none';
+		}
+	</script>
+{% endblock %}
+
 {% block content %}
 	<h1>Programy</h1>
 	{% for s in sections %}
 		<div class="section">
-			<h2 class="sectionName" onclick="">{{ s['sectionName'] }}</h2>
-			{% for p in s['programs'] %}
-				<div class="program">
-					<h3>{{ p['name'] }}</h3>
-					<p><i>{{ p['startDatetime'] }} - {{ p['endDatetime'] }}</i>
-					</p>
-					<p><b>{{ p['place'] }}</b></p>
-					<p>{{ p['perex'] }}</p>
-					{% if (p['lector']) %}<p>{{ p['lector'] }}</p>{% endif %}
-					<p>Obsazeno {{ p['seatsTaken'] }} ze {{ p['capacity'] }}</p>
-					{% if (p['bringAlong']) %}<p>Sebou: {{ p['bringAlong'] }}</p>{% endif %}
-				</div>
-			{% endfor %}
+			<h2 class="sectionName" onclick="toggle_visibility('section-{{ s['id'] }}')">
+				{{ s['title'] }}{% if s['subTitle'] %} - {{ s['subTitle'] }}{% endif %}
+			</h2>
+			<div id="section-{{ s['id'] }}" style="display: none">
+				{% for p in s['programs'] %}
+					<div class="program" onclick="toggle_visibility('program-{{ p['id'] }}')">
+						<h3 class="programName">{{ p['name'] }}</h3>
+						<div id="program-{{ p['id'] }}" style="display: none">
+							{% if (p['lector']) %}<p><b>{{ p['lector'] }}</b></p>{% endif %}
+							<p><i>{{ p['start']|dateToCzechDayName }} {{ p['start']['date']|date('H:i') }}
+									- {{ p['end']['date']|date('H:i') }}</i></p>
+							<p>{% if p['location'] %}<b>{{ p['localtion'] }}</b>{% else %}<i>lokace
+									nezadána</i>{% endif %}
+							</p>
+							<p>{{ p['perex'] }}</p>
+							<p>Obsazeno {{ p['occupied'] }} ze {{ p['capacity'] }}</p>
+							{% if (p['bringAlong']) %}<p>Sebou: {{ p['bringAlong'] }}</p>{% endif %}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
 		</div>
 	{% endfor %}
 {% endblock %}

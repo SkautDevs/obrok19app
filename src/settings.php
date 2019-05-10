@@ -1,4 +1,7 @@
 <?php
+
+namespace App;
+
 return [
     'settings' => [
         'displayErrorDetails' => true, // set to false in production
