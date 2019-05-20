@@ -24,6 +24,7 @@
 			</h2>
 			<div id="section-{{ s['id'] }}" style="display: none">
 				{% for p in s['programs'] %}
+					{% if (p['name'] != 'Osobní volno') %}
 					<div class="program" onclick="toggle_visibility('program-{{ p['id'] }}')">
 						<h3 class="programName">{{ p['name'] }}</h3>
 						<div id="program-{{ p['id'] }}" style="display: none">
@@ -38,6 +39,7 @@
 							{% if (p['bringAlong']) %}<p>Sebou: {{ p['bringAlong'] }}</p>{% endif %}
 						</div>
 					</div>
+					{% endif %}
 				{% endfor %}
 			</div>
 		</div>
