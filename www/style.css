@@ -108,6 +108,7 @@ footer {
 #map .menu-item-map,
 #programs .menu-item-programs,
 #handbook .menu-item-handbook,
+#harmonogram .menu-item-harmonogram,
 #links .menu-item-links {
 	background-color: var(--color-primary);
 }
@@ -173,7 +174,6 @@ img.mainLogo {
 img.menulogo {
 	height: 19px;
 	margin-bottom: -4px;
-	margin-right: 8px
 }
 
 h1 {
@@ -210,13 +210,14 @@ h3 {
 	color: var(--color-base);
 
 }
+
 h2 + h3 {
 	margin-top: -0.83em;
 }
-h3 + table  {
+
+h3 + table {
 	margin-top: -0.83em;
 }
-
 
 p {
 	font-weight: 400;
@@ -238,7 +239,6 @@ button.button-primary {
 	display: none;
 }
 
-
 table.pure-table, table.pure-table td, table.pure-table tr, table.pure-table th {
 	border-color: var(--color-base);
 }
@@ -247,3 +247,13 @@ table.pure-table {
 	border-width: 2px;
 }
 
+table.harmonogram {
+	width: 100%;
+	padding: 0 4px;
+}
+
+div.border-table {
+	border: 4px solid var(--color-base);
+	border-radius: 8px;
+	margin: 0 8px;
+}

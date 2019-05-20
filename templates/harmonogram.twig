@@ -2,524 +2,570 @@
 
 {% block header %}
 	{#<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">#}
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
 {% endblock %}
 
-{% block highlight %}Harmonogram{% endblock %}
+{% block highlight %}harmonogram{% endblock %}
 
 {% block content %}
 	<h1>Harmonogram</h1>
 
-	<h2>Středa</h2>
+	<div class="pure-g">
+		<h2 class="pure-u-1">Středa</h2>
 
-	<h3>Hlavní program</h3>
-	<table class="pure-table pure-table-bordered"  width="100%">
-		<tr>
-			<td width="50%">
-				&nbsp;
-			</td>
-			<td width="50%" rowspan="2">
-				14:00 - 20:00<br />
-				<strong>Registrace</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				19:00 - 19:30<br />
-				<strong>Zahajovací ceremoniál</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				19:30 - 22:00<br />
-				<strong>Večerní koncert</strong>
-			</td>
-			<td>
-				{#&nbsp;<br />#}
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				23:00 <br />
-				<strong>Večerka</strong>
-			</td>
-		</tr>
-	</table>
+		<div class="pure-u-1 pure-u-sm-1-2">
+			<h3>Hlavní program</h3>
+			<div class="border-table">
+				<table class="harmonogram pure-table pure-table-bordered">
+					<tr>
+						<td width="50%">
+							&nbsp;
+						</td>
+						<td width="50%" rowspan="2">
+							14:00 - 20:00<br/>
+							<strong>Registrace</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							19:00 - 19:30<br/>
+							<strong>Zahajovací ceremoniál</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							19:30 - 22:00<br/>
+							<strong>Večerní koncert</strong>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							23:00 <br/>
+							<strong>Večerka</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
 
-	<h3>Doprovodný program</h3>
-	<table class="pure-table pure-table-bordered"  width="100%">
-		<tr>
-			<td colspan="2">
-				{#&nbsp;<br />#}
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				17:00 - 18:30<br />
-				<strong>Tanční workshop #1</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				{#&nbsp;<br />#}
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td width="50%" rowspan="2">
-				20:00 - 23:00<br />
-				<strong>Táborák</strong>
-			</td>
-			<td width="50%">
-				{#&nbsp;<br />#}
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td>
-				22:45<br />
-				<strong>Večerní nástup</strong>
-			</td>
-		</tr>
-	</table>
+		<div class="pure-u-1 pure-u-sm-1-2">
+			<h3>Doprovodný program</h3>
+			<div class="border-table">
+				<table class="pure-table pure-table-bordered" width="100%">
+					<tr>
+						<td colspan="2">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							17:00 - 18:30<br/>
+							<strong>Tanční workshop #1</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td width="50%" rowspan="2">
+							20:00 - 23:00<br/>
+							<strong>Táborák</strong>
+						</td>
+						<td width="50%">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							22:45<br/>
+							<strong>Večerní nástup</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
 
-	<h2>Čtvrtek</h2>
-	<h3>Hlavní program</h3>
-	<table class="pure-table pure-table-bordered" width="100%">
-		<tr>
-			<td colspan="2">
-				7:00<br />
-				<strong>Budíček</strong>
-			</td>
-		</tr>
-		<tr>
-			<td width="50%">
-				8:00<br />
-				<strong>Nástup</strong>
-			</td>
-			<td width="50%" rowspan="3">
-				8:00 - 13:00<br />
-				<strong>Služba</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				9:00 - 12:00<br />
-				<strong>Vzlet</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td colspan="2">&nbsp;</td>
-		</tr>
-		<tr>
-			<td rowspan="2">
-				14:00 - 18:00<br />
-				<strong>Služba</strong>
-			</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>
-				15:00 - 18:00<br />
-				<strong>Vzlet</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				19:30<br />
-				<strong>Večerní ceremoniál</strong>
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="3">
-				20:00 - 23:00<br />
-				<strong>Swing, bejby|</strong>
-			</td>
-			<td>
-				20:00 - 21:00<br />
-				<strong>Televize Seznam - V centru</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				21:00 - 22:00<br />
-				<strong>Improwhow</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				23:00<br />
-				<strong>Večeře</strong>
-			</td>
-		</tr>
-	</table>
-	<h3>Doprovodný program</h3>
-	<table class="pure-table pure-table-bordered" width="100%">
-		<tr>
-			<td colspan="2">
-				7:05<br />
-				<strong>Rozvička</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				12:00 - 13:30<br />
-				<strong>Taneční workshop #2</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				13:30 - 15:00<br />
-				<strong>Taneční workshop #3</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="3" width="50%">
-				20:00 - 23:00<br />
-				<strong>Táborák</strong>
-			</td>
-			<td width="50%">
-				20:00 - 22:00<br />
-				<strong>Filmový večer</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				22:00 - 22:45<br />
-				<strong>Večerní zamyšlení</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				22:45<br />
-				<strong>Večerní nástup</strong>
-			</td>
-		</tr>
-	</table>
+		<h2 class="pure-u-1">Čtvrtek</h2>
 
-	<h2>Pátek</h2>
-	<h3>Hlavní program</h3>
-	<table class="pure-table pure-table-bordered" width="100%">
-		<tr>
-			<td colspan="2">
-				7:30<br />
-				<strong>Budíček</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				8:30<br />
-				<strong>Nástup</strong>
-			</td>
-		</tr>
-		<tr>
-			<td width="50%">
-				9:00 - 10:30<br />
-				<strong>M(a)y Day</strong>
-			</td>
-			<td width="50%">
-				9:00 - 10:30<br />
-				<strong>Pamětníci</strong>
-			</td>
-		</tr>
-		<tr>
-			<td width="50%">
-				11:00 - 12:30<br />
-				<strong>Pamětníci</strong>
-			</td>
-			<td width="50%">
-				11:00 - 12:30<br />
-				<strong>M(a)y Day</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				19:30<br />
-				<strong>Večerní ceremoniál</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				22:00 - 23:00<br />
-				<strong>Ve4čer skautských kapel</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				23:00<br />
-				<strong>Večerka</strong>
-			</td>
-		</tr>
-	</table>
-	<h3>Hlavní program</h3>
-	<table class="pure-table pure-table-bordered" width="100%">
-		<tr>
-			<td colspan="3">
-				7:35<br />
-				<strong>Rozcvička</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3">
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3">
-				9:30 - 13:00<br />
-				<strong>Zpátky do dětství</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3">
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				&nbsp;
-			</td>
-			<td rowspan="2">
-				18:00 - 22:00<br />
-				<strong>Evropské volby</strong>
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="3">
-				20:00 - 23:00<br />
-				<strong>Táborák</strong>
-			</td>
-			<td>
-				20:00 - 22:00<br />
-				<strong>Filmový večer</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				22:00 - 22:45<br />
-				<strong>Večerní zamyšlení</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				22:45<br />
-				<strong>Večerní nástup</strong>
-			</td>
-		</tr>
-	</table>
+		<div class="pure-u-1 pure-u-sm-1-2">
+			<h3>Hlavní program</h3>
+			<div class="border-table">
+				<table class="pure-table pure-table-bordered" width="100%">
+					<tr>
+						<td colspan="2">
+							7:00<br/>
+							<strong>Budíček</strong>
+						</td>
+					</tr>
+					<tr>
+						<td width="50%">
+							8:00<br/>
+							<strong>Nástup</strong>
+						</td>
+						<td width="50%" rowspan="3">
+							8:00 - 13:00<br/>
+							<strong>Služba</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							9:00 - 12:00<br/>
+							<strong>Vzlet</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<td rowspan="2">
+							14:00 - 18:00<br/>
+							<strong>Služba</strong>
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							15:00 - 18:00<br/>
+							<strong>Vzlet</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							19:30<br/>
+							<strong>Večerní ceremoniál</strong>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="3">
+							20:00 - 23:00<br/>
+							<strong>Swing, bejby|</strong>
+						</td>
+						<td>
+							20:00 - 21:00<br/>
+							<strong>Televize Seznam - V centru</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							21:00 - 22:00<br/>
+							<strong>Improwhow</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							23:00<br/>
+							<strong>Večeře</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
 
-	<h2>Sobota</h2>
-	<h3>Hlavní program</h3>
-	<table class="pure-table pure-table-bordered" width="100%">
-		<tr>
-			<td colspan="2">
-				7:30<br />
-				<strong>Budíček</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				8:00<br />
-				<strong>Nástup</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				8:15 - 9:00<br />
-				<strong>Sobotní snídaně</strong>
-			</td>
-		</tr>
-		<tr>
-			<td width="50%">
-				9:00 - 12:00<br />
-				<strong>EXPO</strong>
-			</td>
-			<td width="50%">
-				9:00 - 12:00<br />
-				<strong>Netradiční sporty</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				14:00 - 15:30<br />
-				<strong>VaPro - přednáška #1</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				16:00 - 17:30<br />
-				<strong>VaPro - přednáška #2</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				19:00 - 20:00<br />
-				<strong>Závěrečný ceremoniál</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				20:00 - 00:00<br />
-				<strong>Večerní koncerty</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				00:00<br />
-				<strong>Večerka</strong>
-			</td>
-		</tr>
-	</table>
+		<div class="pure-u-1 pure-u-sm-1-2">
+			<h3>Doprovodný program</h3>
+			<div class="border-table">
+				<table class="pure-table pure-table-bordered" width="100%">
+					<tr>
+						<td colspan="2">
+							7:05<br/>
+							<strong>Rozvička</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							12:00 - 13:30<br/>
+							<strong>Taneční workshop #2</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							13:30 - 15:00<br/>
+							<strong>Taneční workshop #3</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="3" width="50%">
+							20:00 - 23:00<br/>
+							<strong>Táborák</strong>
+						</td>
+						<td width="50%">
+							20:00 - 22:00<br/>
+							<strong>Filmový večer</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							22:00 - 22:45<br/>
+							<strong>Večerní zamyšlení</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							22:45<br/>
+							<strong>Večerní nástup</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
 
-	<h3>Doprovodný program</h3>
-	<table class="pure-table pure-table-bordered" width="100%">
-		<tr>
-			<td colspan="2">
-				7:35<br />
-				<strong>Rozcvička</strong>
-			</td>
-		</tr>
-		<tr>
-			<td width="50%">
-				&nbsp;
-			</td>
-			<td rowspan="3" width="50%">
-				8:00 - 14:00<br />
-				<strong>Evropské volby</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				9:00 - 12:00<br />
-				<strong>Workshopy</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td>
-				14:00 - 16:00<br />
-				<strong>Workshopy</strong>
-			</td>
-			<td rowspan="3">
-				14:00 - 18:00<br />
-				<strong>Netradiční sporty</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>
-				17:45 - 18:30<br />
-				<strong>Večerní zamyšlení</strong>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">&nbsp;</td>
-		</tr>
-		<tr>
-			<td rowspan="3">
-				20:00 - 0:00<br />
-				<strong>Táborák</strong>
-			</td>
-			<td>
-				20:00 - 22:00<br />
-				<strong>Filmový večer</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>
-				23:45<br />
-				<strong>Večerní nástup</strong>
-			</td>
-		</tr>
-	</table>
+		<h2 class="pure-u-1">Pátek</h2>
 
-	<h2>Neděle</h2>
-	<h3>Hlavní program</h3>
-	<table class="pure-table pure-table-bordered" width="100%">
-		<tr>
-			<td>
-				7:30<br />
-				<strong>Budíček</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				8:00<br />
-				<strong>Nástup</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				9:00 - 9:30<br />
-				<strong>Beseda s knězem</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				9:30 - 10:30<br />
-				<strong>Mše</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				9:30 - 10:30<br />
-				<strong>Konec akce</strong>
-			</td>
-		</tr>
-	</table>
-	<h3>Doprovodný program</h3>
-	<table class="pure-table pure-table-bordered" width="100%">
-		<tr>
-			<td>
-				7:35<br />
-				<strong>Rozcvička</strong>
-			</td>
-		</tr>
-	</table>
+		<div class="pure-u-1 pure-u-sm-1-2">
+			<h3>Hlavní program</h3>
+			<div class="border-table">
+				<table class="pure-table pure-table-bordered" width="100%">
+					<tr>
+						<td colspan="2">
+							7:30<br/>
+							<strong>Budíček</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							8:30<br/>
+							<strong>Nástup</strong>
+						</td>
+					</tr>
+					<tr>
+						<td width="50%">
+							9:00 - 10:30<br/>
+							<strong>M(a)y Day</strong>
+						</td>
+						<td width="50%">
+							9:00 - 10:30<br/>
+							<strong>Pamětníci</strong>
+						</td>
+					</tr>
+					<tr>
+						<td width="50%">
+							11:00 - 12:30<br/>
+							<strong>Pamětníci</strong>
+						</td>
+						<td width="50%">
+							11:00 - 12:30<br/>
+							<strong>M(a)y Day</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							19:30<br/>
+							<strong>Večerní ceremoniál</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							22:00 - 23:00<br/>
+							<strong>Ve4čer skautských kapel</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							23:00<br/>
+							<strong>Večerka</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="pure-u-1 pure-u-sm-1-2">
+			<h3>Hlavní program</h3>
+			<div class="border-table">
+				<table class="pure-table pure-table-bordered" width="100%">
+					<tr>
+						<td colspan="3">
+							7:35<br/>
+							<strong>Rozcvička</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							9:30 - 13:00<br/>
+							<strong>Zpátky do dětství</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							&nbsp;
+						</td>
+						<td rowspan="2">
+							18:00 - 22:00<br/>
+							<strong>Evropské volby</strong>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="3">
+							20:00 - 23:00<br/>
+							<strong>Táborák</strong>
+						</td>
+						<td>
+							20:00 - 22:00<br/>
+							<strong>Filmový večer</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							22:00 - 22:45<br/>
+							<strong>Večerní zamyšlení</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							22:45<br/>
+							<strong>Večerní nástup</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<h2 class="pure-u-1">Sobota</h2>
+
+		<div class="pure-u-1 pure-u-sm-1-2">
+			<h3>Hlavní program</h3>
+			<div class="border-table">
+				<table class="pure-table pure-table-bordered" width="100%">
+					<tr>
+						<td colspan="2">
+							7:30<br/>
+							<strong>Budíček</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							8:00<br/>
+							<strong>Nástup</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							8:15 - 9:00<br/>
+							<strong>Sobotní snídaně</strong>
+						</td>
+					</tr>
+					<tr>
+						<td width="50%">
+							9:00 - 12:00<br/>
+							<strong>EXPO</strong>
+						</td>
+						<td width="50%">
+							9:00 - 12:00<br/>
+							<strong>Netradiční sporty</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							14:00 - 15:30<br/>
+							<strong>VaPro - přednáška #1</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							16:00 - 17:30<br/>
+							<strong>VaPro - přednáška #2</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							19:00 - 20:00<br/>
+							<strong>Závěrečný ceremoniál</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							20:00 - 00:00<br/>
+							<strong>Večerní koncerty</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							00:00<br/>
+							<strong>Večerka</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="pure-u-1 pure-u-sm-1-2">
+			<h3>Doprovodný program</h3>
+			<div class="border-table">
+				<table class="pure-table pure-table-bordered" width="100%">
+					<tr>
+						<td colspan="2">
+							7:35<br/>
+							<strong>Rozcvička</strong>
+						</td>
+					</tr>
+					<tr>
+						<td width="50%">
+							&nbsp;
+						</td>
+						<td rowspan="3" width="50%">
+							8:00 - 14:00<br/>
+							<strong>Evropské volby</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							9:00 - 12:00<br/>
+							<strong>Workshopy</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							14:00 - 16:00<br/>
+							<strong>Workshopy</strong>
+						</td>
+						<td rowspan="3">
+							14:00 - 18:00<br/>
+							<strong>Netradiční sporty</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							17:45 - 18:30<br/>
+							<strong>Večerní zamyšlení</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<td rowspan="3">
+							20:00 - 0:00<br/>
+							<strong>Táborák</strong>
+						</td>
+						<td>
+							20:00 - 22:00<br/>
+							<strong>Filmový večer</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+							23:45<br/>
+							<strong>Večerní nástup</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<h2 class="pure-u-1">Neděle</h2>
+
+		<div class="pure-u-1 pure-u-sm-1-2">
+			<h3>Hlavní program</h3>
+			<div class="border-table">
+				<table class="pure-table pure-table-bordered" width="100%">
+					<tr>
+						<td>
+							7:30<br/>
+							<strong>Budíček</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							8:00<br/>
+							<strong>Nástup</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							9:00 - 9:30<br/>
+							<strong>Beseda s knězem</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							9:30 - 10:30<br/>
+							<strong>Mše</strong>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							9:30 - 10:30<br/>
+							<strong>Konec akce</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="pure-u-1 pure-u-sm-1-2">
+			<h3>Doprovodný program</h3>
+			<div class="border-table">
+				<table class="pure-table pure-table-bordered" width="100%">
+					<tr>
+						<td>
+							7:35<br/>
+							<strong>Rozcvička</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 {% endblock %}

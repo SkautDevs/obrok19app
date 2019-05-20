@@ -5,7 +5,6 @@ namespace App;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-
 $app->get('/novinky', function(Request $request, Response $response, array $args) {
 	return $this->view->render($response, 'news.twig', $args);
 })->setName('news');
@@ -37,16 +36,23 @@ $app->get('/harmonogram', function(Request $request, Response $response, array $
 })->setName('harmonogram');
 
 $app->get('/handbook', function(Request $request, Response $response, array $args) {
-	return $this->view->render($response, 'handbook.twig', $args);
-})->setName('handbook');
+	return $this->view->render($response, 'handbook-choose.twig', $args);
+})->setName('handbook-choose');
 
-$app->post('/save-subscription', function(Request $request, Response $response, array $args) {
-	$json = json_decode($request->getBody(), true);
+$app->get('/handbook/view', function(Request $request, Response $response, array $args) {
+	return $this->view->render($response, 'handbook-view.twig', $args);
+})->setName('handbook-view');
 
-	// save substription
+$app->get('/handbook/download', function(Request $request, Response $response, array $args) {
+	$response = $response
+		->withHeader('Content-type', 'application/pdf')
+		->withAddedHeader('Content-Disposition', 'attachment;filename="Obrok19_handbook.pdf"')
+		->withAddedHeader('Expires', '0');
 
-	return $response->withJson(['message' => 'success']);
-});
+	readfile('/attachments/obrok19_booklet.pdf');
+
+	return $response;
+})->setName('handbook-download');
 
 $app->get('/', function(Request $request, Response $response, array $args) {
 	return $this->view->render($response, 'homepage.twig', $args);
