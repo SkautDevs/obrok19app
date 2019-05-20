@@ -24,7 +24,6 @@
 			</h2>
 			<div id="section-{{ s['id'] }}" style="display: none">
 				{% for p in s['programs'] %}
-					{% if (p['name'] != 'Osobní volno') %}
 					<div class="program" onclick="toggle_visibility('program-{{ p['id'] }}')">
 						<h3 class="programName">{{ p['name'] }}</h3>
 						<div id="program-{{ p['id'] }}" style="display: none">
@@ -37,9 +36,22 @@
 							<p>{{ p['perex'] }}</p>
 							<p>Obsazeno {{ p['occupied'] }} ze {{ p['capacity'] }}</p>
 							{% if (p['bringAlong']) %}<p>Sebou: {{ p['bringAlong'] }}</p>{% endif %}
+
+							{% if(s['id'] == 2) %}
+								<a href="images/map-vzlet.png">
+									<img src="images/map-vzlet.png" alt="Mapa vzlet" />
+								</a>
+                            {% elseif(s['id'] == 14) %}
+								<a href="images/map-mayday.png">
+									<img src="images/map-mayday.png" alt="Mapa vzlet" />
+								</a>
+                            {% elseif(s['id'] == 15) %}
+								<a href="images/map-velkahra.png">
+									<img src="images/map-velkahra.png" alt="Mapa vzlet" />
+								</a>
+                            {% endif %}
 						</div>
 					</div>
-					{% endif %}
 				{% endfor %}
 			</div>
 		</div>

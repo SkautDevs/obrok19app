@@ -18,7 +18,14 @@ $app->get('/programy', function(Request $request, Response $response, array $arg
 	$httpService = new HttpService();
 	$programSections = $httpService->getSectionsLocal();
 	$programs = $httpService->getPrograms();
-	foreach ($programs as $program) {
+	foreach ($programs as $program)
+	{
+	    // programy s timto nazvem nechceme
+        if ($program['name'] === 'Osobní volno')
+        {
+            continue;
+        }
+
 		$programSections[$program['section']['id']]['programs'][] = $program;
 	}
 
