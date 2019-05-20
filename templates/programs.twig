@@ -30,12 +30,24 @@
 							{% if (p['lector']) %}<p><b>{{ p['lector'] }}</b></p>{% endif %}
 							<p><i>{{ p['start']|dateToCzechDayName }} {{ p['start']['date']|date('H:i') }}
 									- {{ p['end']['date']|date('H:i') }}</i></p>
-							<p>{% if p['location'] %}<b>{{ p['localtion'] }}</b>{% else %}<i>lokace
-									nezadána</i>{% endif %}
-							</p>
+							<p>{% if p['location'] %}<b>{{ p['location'] }}</b>{% else %}<i>lokace nezadána</i>{% endif %}</p>
 							<p>{{ p['perex'] }}</p>
-							<p>Obsazeno {{ p['occupied'] }} ze {{ p['capacity'] }}</p>
+							{#<p>Obsazeno {{ p['occupied'] }} ze {{ p['capacity'] }}</p>#}
 							{% if (p['bringAlong']) %}<p>Sebou: {{ p['bringAlong'] }}</p>{% endif %}
+
+							{% if(s['id'] == 2) %}
+								{#<a href="images/map-vzlet.png">#}
+									<img src="images/map-vzlet.png" alt="Mapa Vzlet" />
+								{#</a>#}
+                            {% elseif(s['id'] == 14) %}
+								{#<a href="images/map-mayday.png">#}
+									<img src="images/map-mayday.png" alt="Mapa M(a]yDay" />
+								{#</a>#}
+                            {% elseif(s['id'] == 15) %}
+								{#<a href="images/map-velkahra.png">#}
+									<img src="images/map-velkahra.png" alt="Mapa Velká hra" />
+								{#</a>#}
+                            {% endif %}
 						</div>
 					</div>
 				{% endfor %}
