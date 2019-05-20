@@ -5,16 +5,21 @@ namespace App;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Processor\UidProcessor;
+use Skautis\Skautis;
+use Slim\App;
 use Slim\Container;
+use Slim\Http\Uri;
+use Slim\Router;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 
 
+/** @var $app App */
 $container = $app->getContainer();
 
-$container['logger'] = function($c) {
+$container['logger'] = function(Container $c) {
 	$settings = $c->get('settings')['logger'];
 	$logger = new Logger($settings['name']);
 	$logger->pushProcessor(new UidProcessor());
@@ -22,20 +27,40 @@ $container['logger'] = function($c) {
 	return $logger;
 };
 
+
+$container['skautis'] = function (Container $c) {
+    $settings = $c->get('settings')['skautis'];
+    return Skautis::getInstance($settings['appId'], $settings['testMode']);
+};
+
+// Register globally to app
+$container['session'] = function (Container $c) {
+    return new \SlimSession\Helper;
+};
+
+// Register globally to app
+$container['authenticator'] = function (Container $c) {
+    return new Authenticator($c->get('session'), $c->get('skautis'));
+};
+
+
 $container['view'] = function(Container $c) {
 	$view = new Twig(__DIR__.'/../templates/', [
 		//'cache' => '/../temp/viewcache'
 		'cache' => false,
 	]);
 
+	/** @var Router $router */
 	$router = $c->get('router');
+
+	/** @var Uri $uri */
 	$uri = $c['request']->getUri();
 	$basePath = $uri->getScheme().'://'.$uri->getHost().':'.$uri->getPort().$uri->getBasePath();
 
 	$view->addExtension(new TwigExtension($router, $basePath));
 
 	$view->getEnvironment()->addFunction(
-		new TwigFunction('link', function(string $routeName) use ($router, $basePath) {
+		new TwigFunction('link', function($routeName) use ($router, $basePath) {
 			/** @var \Slim\Router $router */
 			return $basePath.$router->pathFor($routeName);
 		})
@@ -57,3 +82,4 @@ $container['view'] = function(Container $c) {
 
 	return $view;
 };
+

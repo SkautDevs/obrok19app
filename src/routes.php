@@ -2,10 +2,12 @@
 
 namespace App;
 
+use Skautis\Skautis;
+use Slim\App;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-
+/** @var $app App */
 $app->get('/novinky', function(Request $request, Response $response, array $args) {
 	return $this->view->render($response, 'news.twig', $args);
 })->setName('news');
@@ -26,21 +28,65 @@ $app->get('/programy', function(Request $request, Response $response, array $arg
 })->setName('programs');
 
 $app->get('/harmonogram', function(Request $request, Response $response, array $args) {
+
+    /** @var Skautis $skautis */
+    $skautis = $this->get('skautis');
+
+    /** @var Authenticator $authenticator */
+    $authenticator = $this->get('authenticator');
+
+    $args['isLogged'] = $authenticator->isLogged();
+    $args['identity'] = $authenticator->isLogged() ? $authenticator->getIdentity() : null;
+    $args['loginUrl'] = $skautis->getLoginUrl($request->getUri()->getPath());
+    $args['logoutUrl'] = $skautis->getLogoutUrl() . '&ReturnUrl=' . $request->getUri()->getPath();
+
+    $args['registeredPrograms'] = [];
+    if ($authenticator->isLogged())
+    {
+        $httpService = new HttpService();
+        foreach ($httpService->getProgramsForSkautisUser(24389 /*$authenticator->getUserId()*/) as $program)
+        {
+            $sectionId = $program['section']['id'];
+            $sectionTime = (new \DateTime($program['start']['date']))->format('H:i');
+            $args['registeredPrograms'][$sectionId][$sectionTime] = $program;
+        }
+    }
+
+//    var_dump($args['registeredPrograms']); die;
+
 	return $this->view->render($response, 'harmonogram.twig', $args);
 })->setName('harmonogram');
 
 $app->get('/handbook', function(Request $request, Response $response, array $args) {
+
 	return $this->view->render($response, 'handbook.twig', $args);
+
+
 })->setName('handbook');
 
 $app->post('/save-subscription', function(Request $request, Response $response, array $args) {
 	$json = json_decode($request->getBody(), true);
 
 	// save substription
-
 	return $response->withJson(['message' => 'success']);
 });
 
 $app->get('/', function(Request $request, Response $response, array $args) {
 	return $this->view->render($response, 'homepage.twig', $args);
 })->setName('homepage');
+
+$app->post('/', function(Request $request, Response $response, array $args) {
+
+    if ($request->getParsedBodyParam('skautIS_Token'))
+    {
+        // pokusime se prihlasit
+        $this->authenticator->login($request);
+    }
+    elseif ($request->getParsedBodyParam('skautIS_Logout'))
+    {
+        $this->authenticator->logout();
+    }
+
+    return $response->withRedirect($request->getQueryParam('ReturnUrl', '/'));
+
+});

@@ -1,0 +1,9 @@
+{% if (registeredPrograms[section][time] is defined) %}
+	{% set program = registeredPrograms[section][time] %}
+	<br />
+	<div class="button-success pure-button">
+		<small>Váš program:</small><br />
+		{{ program.name }}<br />
+		<small>{{ program.lector }}</small>
+	</div>
+{% endif %}

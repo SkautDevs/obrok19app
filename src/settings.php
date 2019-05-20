@@ -18,5 +18,10 @@ return [
             'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/../logs/app.log',
             'level' => \Monolog\Logger::DEBUG,
         ],
+
+        'skautis' => [
+            'appId' => 'bd9fe010-fb08-4a64-b761-0c215cc9811a',
+            'testMode' => true,
+        ],
     ],
 ];

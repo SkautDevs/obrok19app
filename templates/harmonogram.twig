@@ -9,8 +9,15 @@
 {% block content %}
 	<h1>Harmonogram</h1>
 
-	<h2>Středa</h2>
+	{% if (isLogged) %}
+	Zvýraznuje se program pro <strong>{{ identity }}</strong><br />
+	<a href="{{ logoutUrl }}">Odhlásit se</a>
+	{% else %}
+	Chcete zvýraznit váš zaregistrovaný program?<br />
+	<a href="{{ loginUrl }}">Přihlaste se přes SkautIs</a>
+	{%  endif %}
 
+	<h2>Středa</h2>
 	<h3>Hlavní program</h3>
 	<table class="pure-table pure-table-bordered"  width="100%">
 		<tr>
@@ -106,12 +113,14 @@
 			<td width="50%" rowspan="3">
 				8:00 - 13:00<br />
 				<strong>Služba</strong>
+                {% include('harmonogram-your-program.twig') with {'section': 1, 'time': '08:00'} %}
 			</td>
 		</tr>
 		<tr>
 			<td>
 				9:00 - 12:00<br />
 				<strong>Vzlet</strong>
+                {% include('harmonogram-your-program.twig') with {'section': 2, 'time': '09:00'} %}
 			</td>
 		</tr>
 		<tr>
@@ -124,6 +133,7 @@
 			<td rowspan="2">
 				14:00 - 18:00<br />
 				<strong>Služba</strong>
+				{% include('harmonogram-your-program.twig') with {'section': 1, 'time': '15:00'} %}
 			</td>
 			<td>&nbsp;</td>
 		</tr>
@@ -131,6 +141,7 @@
 			<td>
 				15:00 - 18:00<br />
 				<strong>Vzlet</strong>
+                {% include('harmonogram-your-program.twig') with {'section': 2, 'time': '15:00'} %}
 			</td>
 		</tr>
 		<tr>
@@ -219,6 +230,7 @@
 		</tr>
 	</table>
 
+
 	<h2>Pátek</h2>
 	<h3>Hlavní program</h3>
 	<table class="pure-table pure-table-bordered" width="100%">
@@ -242,12 +254,14 @@
 			<td width="50%">
 				9:00 - 10:30<br />
 				<strong>Pamětníci</strong>
+                {% include('harmonogram-your-program.twig') with {'section': 11, 'time': '09:00'} %}
 			</td>
 		</tr>
 		<tr>
 			<td width="50%">
 				11:00 - 12:30<br />
 				<strong>Pamětníci</strong>
+                {% include('harmonogram-your-program.twig') with {'section': 11, 'time': '09:00'} %}
 			</td>
 			<td width="50%">
 				11:00 - 12:30<br />
@@ -375,12 +389,14 @@
 			<td colspan="2">
 				14:00 - 15:30<br />
 				<strong>VaPro - přednáška #1</strong>
+                {% include('harmonogram-your-program.twig') with {'section': 3, 'time': '14:00'} %}
 			</td>
 		</tr>
 		<tr>
 			<td colspan="2">
 				16:00 - 17:30<br />
 				<strong>VaPro - přednáška #2</strong>
+                {% include('harmonogram-your-program.twig') with {'section': 4, 'time': '16:00'} %}
 			</td>
 		</tr>
 		<tr>

@@ -6,8 +6,14 @@ use \GuzzleHttp\Client;
 
 
 class HttpService {
+    /**
+     * @var Client
+     */
 	private $httpClient;
 
+    /**
+     * HttpService constructor.
+     */
 	public function __construct() {
 		$this->httpClient = new Client([
 			'base_uri' => 'https://registrace.obrok19.cz/api/program/',
@@ -15,6 +21,10 @@ class HttpService {
 		]);
 	}
 
+    /**
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
 	public function getSectionsOnline(): array {
 		$json = $this->httpClient->request('GET', 'sections');
 		$sectionsArray = json_decode($json->getBody(), true);
@@ -26,6 +36,9 @@ class HttpService {
 		return $output;
 	}
 
+    /**
+     * @return array
+     */
 	public function getSectionsLocal(): array {
 		return [
 			10 => [
@@ -85,8 +98,22 @@ class HttpService {
 		];
 	}
 
+    /**
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
 	public function getPrograms(): array {
 		$json = $this->httpClient->request('GET');
 		return json_decode($json->getBody(), true);
 	}
+
+    /**
+     * @param int $skautisUserID
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getProgramsForSkautisUser(int $skautisUserID): array {
+        $json = $this->httpClient->request('GET', 'skautis-user/' . $skautisUserID);
+        return json_decode($json->getBody(), true);
+    }
 }
