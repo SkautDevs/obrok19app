@@ -73,6 +73,7 @@
 	color: var(--text-invert);
 	padding: 8px 16px;
 	border-radius: 8px;
+	text-decoration: none;
 }
 
 body {
@@ -166,6 +167,8 @@ img.mainLogo {
 
 img.menulogo {
 	height: 19px;
+	margin-bottom: -4px;
+	margin-right: 8px
 }
 
 h1 {

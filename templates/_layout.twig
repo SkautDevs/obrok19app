@@ -11,7 +11,7 @@
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css?v=1">
 	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
 		  integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 	<title>Obrok 2019</title>
@@ -23,9 +23,10 @@
 <header>
 	<div class="menu pure-menu pure-menu-horizontal pure-menu-scrollable" id="{% block highlight %}{% endblock %}">
 		<ul class="pure-menu-list">
-			<li class="pure-menu-item"><a href="{{ link('homepage') }}">
-					<img class="menulogo menu-item-homepage menu-link pure-menu-link"
-						 src="images/Obrok19_bily_stit_160.png">
+			<li class="pure-menu-item">
+				<a href="{{ link('homepage') }}" class="menu-item-homepage menu-link pure-menu-link">
+					<img class="menulogo" src="images/Obrok19_bily_stit_160.png">
+					Domů
 				</a>
 			</li>
 			<li class="pure-menu-item"><a href="{{ link('map') }}"
