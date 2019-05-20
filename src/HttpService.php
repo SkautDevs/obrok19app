@@ -11,6 +11,7 @@ class HttpService {
 	public function __construct() {
 		$this->httpClient = new Client([
 			'base_uri' => 'https://registrace.obrok19.cz/api/program/',
+            'verify' => false,
 		]);
 	}
 
@@ -53,6 +54,34 @@ class HttpService {
 				'subTitle' => '2. blok',
 				'id' => 4,
 			],
+            12 => [
+                'title' => 'Večerní programy',
+                'id' => 12,
+            ],
+            13 => [
+                'title' => 'Doprovodné programy',
+                'id' => 13,
+            ],
+            14 => [
+                'title' => 'M(a)y Day',
+                'id' => 14,
+            ],
+            15 => [
+                'title' => 'Velká hra',
+                'id' => 15,
+            ],
+            16 => [
+                'title' => 'EXPO',
+                'id' => 16,
+            ],
+            17 => [
+                'title' => 'Netradiční sporty',
+                'id' => 17,
+            ],
+            18 => [
+                'title' => 'Mše',
+                'id' => 18,
+            ],
 		];
 	}
 

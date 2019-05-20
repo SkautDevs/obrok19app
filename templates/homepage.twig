@@ -1,5 +1,9 @@
 {% extends "_layout.twig" %}
 
+{% block header %}
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+{% endblock %}
+
 {% block highlight %}homepage{% endblock %}
 
 {% block content %}
@@ -16,19 +20,28 @@
 			document.getElementById('notification-info').classList.remove('hide');
 		}
 	</script>
-	<h1>Novinky</h1>
-	<div class="news">
-		<h3>sobota 11:00</h3>
-		<p>Rádi bychom Vás pozvali na vzdálené nezakreslené místo v mapě!</p>
-	</div>
-	<div class="news">
-		<h3>pátek 14:54</h3>
-		<p>Hlavní program bude na stagi, a ne na louce!</p>
-	</div>
-	<div class="news">
-		<h3>pátek 14:43</h3>
-		<p>Hlavní program bude na velké louce!</p>
-	</div>
+	{#<h1>Novinky</h1>#}
+	{#<div class="news">#}
+		{#<h3>sobota 11:00</h3>#}
+		{#<p>Rádi bychom Vás pozvali na vzdálené nezakreslené místo v mapě!</p>#}
+	{#</div>#}
+	{#<div class="news">#}
+		{#<h3>pátek 14:54</h3>#}
+		{#<p>Hlavní program bude na stagi, a ne na louce!</p>#}
+	{#</div>#}
+	{#<div class="news">#}
+		{#<h3>pátek 14:43</h3>#}
+		{#<p>Hlavní program bude na velké louce!</p>#}
+	{#</div>#}
+
+	<p><a class="highlight" href="tel:797859598">Krizový telefon <i class="fas fa-mobile-alt"></i> 797 859 598</a></p>
+
+	<p><a href="https://obrok19.cz/"><i class="fas fa-globe-africa"></i> obrok19.cz</a></p>
+	<p><a href="https://cs-cz.facebook.com/skautskyobrok/"><i class="fab fa-facebook-square"></i> facebook.com/skautskyobrok</a></p>
+	<p><a href="https://www.instagram.com/obrok_official/"><i class="fab fa-instagram"></i> instagram.com/obrok_official</a></p>
+	<p><a href="mailto:info@obrok19.cz"><i class="fas fa-envelope"></i> info@obrok19.cz</a></p>
+
+
 	<p><img class="logo" src="images/SKAUT_horizontalni_logo.svg"></p>
 	<p>Obrok 19 pořádá <a href="https://www.skaut.cz/">Junák - český skaut</a></p>
 {% endblock %}

@@ -25,9 +25,9 @@ $app->get('/programy', function(Request $request, Response $response, array $arg
 	return $this->view->render($response, 'programs.twig', ['sections' => $programSections]);
 })->setName('programs');
 
-$app->get('/odkazy', function(Request $request, Response $response, array $args) {
-	return $this->view->render($response, 'links.twig', $args);
-})->setName('links');
+$app->get('/harmonogram', function(Request $request, Response $response, array $args) {
+	return $this->view->render($response, 'harmonogram.twig', $args);
+})->setName('harmonogram');
 
 $app->get('/handbook', function(Request $request, Response $response, array $args) {
 	return $this->view->render($response, 'handbook.twig', $args);

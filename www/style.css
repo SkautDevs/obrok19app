@@ -181,7 +181,7 @@ h1.underPicture {
 
 h2 {
 	font-weight: 700;
-	font-size: 8vmin;
+	font-size: 7vmin;
 	color: #1e6650;
 }
 
@@ -198,9 +198,17 @@ h2.sectionName:hover {
 
 h3 {
 	font-weight: 700;
-	font-size: 6vmin;
-	color: #1e6650;
+	font-size: 4vmin;
+	color: var(--color-base);
+
 }
+h2 + h3 {
+	margin-top: -0.83em;
+}
+h3 + table  {
+	margin-top: -0.83em;
+}
+
 
 p {
 	font-weight: 400;
@@ -220,4 +228,13 @@ button.button-primary {
 
 .hide {
 	display: none;
+}
+
+
+table.pure-table, table.pure-table td, table.pure-table tr, table.pure-table th {
+	border-color: var(--color-base);
+}
+
+table.pure-table {
+	border-width: 2px;
 }
