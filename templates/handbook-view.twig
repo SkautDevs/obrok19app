@@ -5,6 +5,11 @@
 {% block content %}
 	<h1>Handbook</h1>
 	<div class="handbook">
-		<embed src="{{ link('homepage') }}attachments/obrok19_handbook.pdf" width="100%" height="100%" type="application/pdf">
+		{#<embed src="{{ link('homepage') }}attachments/obrok19_handbook.pdf" width="100%" height="100%" type="application/pdf">#}
+
+		<div id="handbook-pdf" style="height: 100vh;"></div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
+		<script>PDFObject.embed("{{ link('homepage') }}attachments/obrok19_handbook.pdf", "#handbook-pdf");</script>
 	</div>
 {% endblock %}
