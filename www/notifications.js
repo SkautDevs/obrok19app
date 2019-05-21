@@ -22,20 +22,20 @@ const requestNotificationPermission = async () => {
 	}
 };
 
-const showLocalNotification = (title, body, swRegistration) => {
+const showLocalNotification = async (title, body, swRegistration) => {
 	const options = {
 		'body': body,
 		'icon': 'images/Obrok19_minilogo.png',
-		'vibrate': [
-			150, 50, 150, 50, 150, 150, // O
-			150, 50, 50, 50, 50, 50, 50, 150, // B
-			50, 50, 150, 50, 50, 150, // R
-			150, 50, 150, 50, 150, 150, // O
-			150, 50, 50, 50, 150, // K
-		],
+		// 'vibrate': [
+		// 	150, 50, 150, 50, 150, 150, // O
+		// 	150, 50, 50, 50, 50, 50, 50, 150, // B
+		// 	50, 50, 150, 50, 50, 150, // R
+		// 	150, 50, 150, 50, 150, 150, // O
+		// 	150, 50, 50, 50, 150, // K
+		// ],
 	};
 
-	swRegistration.showNotification(title, options);
+    await swRegistration.showNotification(title, options);
 };
 
 const mainNotification = async () => {
@@ -43,9 +43,11 @@ const mainNotification = async () => {
 	const swRegistration = await registerServiceWorker();
 	const permission = await requestNotificationPermission();
 
-	showLocalNotification(
+	await showLocalNotification(
 		'Super, teď už ti na Obroku nic neujde!',
 		'Nezapomeň prozkoumat ostatní části appky!',
 		swRegistration,
 	);
+
+	document.getElementById('notification-info').classList.add('hide');
 };
