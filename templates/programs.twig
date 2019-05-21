@@ -11,7 +11,28 @@
 			else
 				e.style.display = 'none';
 		}
-		// if (location.hash)
+
+		function toggleByHash()
+		{
+            const matches = location.hash.match(/#section-(\d+)-program-(\d+)/);
+            if (matches)
+            {
+                toggle_visibility('section-' + matches[1]);
+                toggle_visibility('program-' + matches[2]);
+
+                let elem = document.getElementById("program-" + matches[2]);
+                if (elem)
+				{
+				    setTimeout(function() {
+                        elem.scrollIntoView();
+					}, 300);
+
+				}
+            }
+		}
+
+		window.addEventListener('load', toggleByHash);
+		window.addEventListener('hashchange', toggleByHash)
 	</script>
 {% endblock %}
 
