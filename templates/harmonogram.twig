@@ -10,6 +10,14 @@
 {% block content %}
 	<h1>Harmonogram</h1>
 
+    {% if (isLogged) %}
+		Zvýraznuje se program pro <strong>{{ identity }}</strong><br />
+		<a href="{{ logoutUrl }}">Odhlásit se</a>
+    {% else %}
+		Chcete zvýraznit váš zaregistrovaný program?<br />
+		<a href="{{ loginUrl }}">Přihlaste se přes SkautIs</a>
+    {%  endif %}
+
 	<div class="pure-g">
 		<h2 class="pure-u-1">Středa</h2>
 
@@ -155,7 +163,7 @@
 					<tr>
 						<td rowspan="3">
 							20:00 - 23:00<br/>
-							<strong>Swing, bejby|</strong>
+							<strong>Swing, bejby!</strong>
 						</td>
 						<td>
 							20:00 - 21:00<br/>
@@ -188,7 +196,7 @@
 					<tr>
 						<td colspan="2">
 							7:05<br/>
-							<strong>Rozvička</strong>
+							<strong>Rozcvička</strong>
 						</td>
 					</tr>
 					<tr>
@@ -554,7 +562,7 @@
 					</tr>
 					<tr>
 						<td>
-							9:30 - 10:30<br/>
+							10:30<br/>
 							<strong>Konec akce</strong>
 						</td>
 					</tr>
