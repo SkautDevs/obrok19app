@@ -12,7 +12,7 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="theme-color" content="#ffffff">
 	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-	<link rel="stylesheet" href="style.css?v=2">
+	<link rel="stylesheet" href="style.css?v=3">
 	<title>Obrok 2019</title>
 	{% block header %}{% endblock %}
 	<script src="service.js"></script>
@@ -24,8 +24,7 @@
 		<ul class="pure-menu-list">
 			<li class="pure-menu-item">
 				<a href="{{ link('homepage') }}" class="menu-item-homepage menu-link pure-menu-link">
-					<img class="menulogo" src="images/Obrok19_bily_stit_160.png">
-					Domů
+					<img class="menulogo" src="/images/Obrok19_bily_stit_160.png">
 				</a>
 			</li>
 			<li class="pure-menu-item"><a href="{{ link('map') }}"
@@ -33,12 +32,12 @@
 			</li>
 			<li class="pure-menu-item"><a href="{{ link('programs') }}"
 										  class="menu-item-programs menu-link pure-menu-link">Programy</a>
-
-			<li class="pure-menu-item"><a href="{{ link('handbook') }}"
+			</li>
+			<li class="pure-menu-item"><a href="{{ link('handbook-choose') }}"
 										  class="menu-item-handbook menu-link pure-menu-link">Handbook</a>
 			</li>
 			<li class="pure-menu-item"><a href="{{ link('harmonogram') }}"
-										  class="menu-item-links menu-link pure-menu-link">Harmonogram</a>
+										  class="menu-item-harmonogram menu-link pure-menu-link">Harmonogram</a>
 			</li>
 		</ul>
 	</div>
@@ -47,7 +46,7 @@
 	{% block content %}{% endblock %}
 </main>
 <footer>
-	<a href="https://devs.skauting.cz/" target="_blank">S ❤ vybrousil Lung</a>
+	<a href="https://devs.skauting.cz/" target="_blank">S ❤ vybrousili Lung + Peggy</a>
 </footer>
 </body>
 </html>

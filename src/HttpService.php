@@ -45,6 +45,14 @@ class HttpService {
 				'title' => 'Putování',
 				'id' => 10,
 			],
+            12 => [
+                'title' => 'Večerní programy',
+                'id' => 12,
+            ],
+            13 => [
+                'title' => 'Doprovodné programy',
+                'id' => 13,
+            ],
 			1 => [
 				'title' => 'Služba',
 				'id' => 1,
@@ -57,24 +65,6 @@ class HttpService {
 				'title' => 'Pamětníci',
 				'id' => 11,
 			],
-			3 => [
-				'title' => 'Vapro',
-				'subTitle' => '1. blok',
-				'id' => 3,
-			],
-			4 => [
-				'title' => 'Vapro',
-				'subTitle' => '2. blok',
-				'id' => 4,
-			],
-            12 => [
-                'title' => 'Večerní programy',
-                'id' => 12,
-            ],
-            13 => [
-                'title' => 'Doprovodné programy',
-                'id' => 13,
-            ],
             14 => [
                 'title' => 'M(a)y Day',
                 'id' => 14,
@@ -87,10 +77,21 @@ class HttpService {
                 'title' => 'EXPO',
                 'id' => 16,
             ],
+			3 => [
+				'title' => 'Vapro',
+				'subTitle' => '1. blok',
+				'id' => 3,
+			],
+			4 => [
+				'title' => 'Vapro',
+				'subTitle' => '2. blok',
+				'id' => 4,
+			],
             17 => [
                 'title' => 'Netradiční sporty',
                 'id' => 17,
             ],
+
             18 => [
                 'title' => 'Mše',
                 'id' => 18,

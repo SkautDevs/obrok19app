@@ -1,0 +1,18 @@
+{% extends "_layout.twig" %}
+
+{% block highlight %}handbook{% endblock %}
+
+{% block content %}
+	<h1>Handbook</h1>
+	<a href="{{ path_for("handbook-view") }}">
+		<button class="button-primary pure-button pure-button-primary">
+			Prohlédnout online
+		</button>
+	</a>
+	<br><br>
+	<a href="{{ path_for("handbook-download") }}">
+		<button class="button-primary pure-button pure-button-primary">
+			Stáhnout PDF
+		</button>
+	</a>
+{% endblock %}
