@@ -85,6 +85,10 @@ $app->get('/', function(Request $request, Response $response, array $args) {
 	return $this->view->render($response, 'homepage.twig', $args);
 })->setName('homepage');
 
+$app->get('/&uuid={uuid}', function(Request $request, Response $response, array $args) {
+    return $response->withRedirect($this->router->pathFor('homepage'));
+});
+
 $app->post('/', function(Request $request, Response $response, array $args) {
 
     if ($request->getParsedBodyParam('skautIS_Token'))
@@ -100,3 +104,4 @@ $app->post('/', function(Request $request, Response $response, array $args) {
     return $response->withRedirect($request->getQueryParam('ReturnUrl', '/'));
 
 });
+
