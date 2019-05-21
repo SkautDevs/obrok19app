@@ -20,7 +20,7 @@
                 toggle_visibility('section-' + matches[1]);
                 toggle_visibility('program-' + matches[2]);
 
-                let elem = document.getElementById("program-" + matches[2]);
+                let elem = document.getElementById("program-detail-" + matches[2]);
                 if (elem)
 				{
 				    setTimeout(function() {
@@ -46,7 +46,7 @@
 			</h2>
 			<div id="section-{{ s['id'] }}" style="display: none">
 				{% for p in s['programs'] %}
-					<div class="program" onclick="toggle_visibility('program-{{ p['id'] }}')">
+					<div class="program" id="program-detail-{{ p['id'] }}" onclick="toggle_visibility('program-{{ p['id'] }}')">
 						<h3 class="programName">{{ p['name'] }}</h3>
 						<div id="program-{{ p['id'] }}" style="display: none">
 							{% if (p['lector']) %}<p><b>{{ p['lector'] }}</b></p>{% endif %}
