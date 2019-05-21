@@ -44,7 +44,7 @@ $app->get('/harmonogram', function(Request $request, Response $response, array $
     if ($authenticator->isLogged())
     {
         $httpService = new HttpService();
-        foreach ($httpService->getProgramsForSkautisUser(24389 /*$authenticator->getUserId()*/) as $program)
+        foreach ($httpService->getProgramsForSkautisUser($authenticator->getUserId()) as $program)
         {
             $sectionId = $program['section']['id'];
             $sectionTime = (new \DateTime($program['start']['date']))->format('H:i');

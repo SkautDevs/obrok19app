@@ -20,8 +20,8 @@ return [
         ],
 
         'skautis' => [
-            'appId' => 'bd9fe010-fb08-4a64-b761-0c215cc9811a',
-            'testMode' => true,
+            'appId' => 'ff2c5478-d0cf-4d6e-b86a-d4276c8dada1',
+            'testMode' => false,
         ],
     ],
 ];
