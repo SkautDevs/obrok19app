@@ -55,7 +55,11 @@ $container['view'] = function(Container $c) {
 
 	/** @var Uri $uri */
 	$uri = $c['request']->getUri();
-	$basePath = $uri->getScheme().'://'.$uri->getHost().':'.$uri->getPort().$uri->getBasePath();
+//	$basePath = $uri->getScheme().'://'.$uri->getHost().':'.$uri->getPort().$uri->getBasePath();
+
+    $basePath = '';
+
+
 
 	$view->addExtension(new TwigExtension($router, $basePath));
 
