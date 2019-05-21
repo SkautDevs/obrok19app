@@ -54,9 +54,8 @@ $container['view'] = function(Container $c) {
 	$router = $c->get('router');
 
 	/** @var Uri $uri */
-	$uri = $c['request']->getUri();
+//	$uri = $c['request']->getUri();
 //	$basePath = $uri->getScheme().'://'.$uri->getHost().':'.$uri->getPort().$uri->getBasePath();
-
     $basePath = '';
 
 
@@ -66,7 +65,7 @@ $container['view'] = function(Container $c) {
 	$view->getEnvironment()->addFunction(
 		new TwigFunction('link', function($routeName) use ($router, $basePath) {
 			/** @var \Slim\Router $router */
-			return $basePath.$router->pathFor($routeName);
+			return $router->pathFor($routeName);
 		})
 	);
 

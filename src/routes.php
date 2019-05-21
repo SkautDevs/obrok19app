@@ -76,7 +76,7 @@ $app->get('/handbook/download', function(Request $request, Response $response, a
 		->withAddedHeader('Content-Disposition', 'attachment;filename="Obrok19_handbook.pdf"')
 		->withAddedHeader('Expires', '0');
 
-	readfile('/attachments/obrok19_booklet.pdf');
+	readfile('attachments/obrok19_booklet.pdf');
 
 	return $response;
 })->setName('handbook-download');
