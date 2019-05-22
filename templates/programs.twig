@@ -50,12 +50,20 @@
 						<h3 class="programName">{{ p['name'] }}</h3>
 						<div id="program-{{ p['id'] }}" style="display: none">
 							{% if (p['lector']) %}<p><b>{{ p['lector'] }}</b></p>{% endif %}
-							<p><i>{{ p['start']|dateToCzechDayName }} {{ p['start']['date']|date('H:i') }}
-									- {{ p['end']['date']|date('H:i') }}</i></p>
+							<p>
+								<i>
+                                    {{ p['start']|dateToCzechDayName }} {{ p['start']['date']|date('H:i') }} -
+
+									{% if (p['multiday']) %}
+                                        {{ p['end']|dateToCzechDayName }}
+                                    {% endif %}
+                                    {{ p['end']['date']|date('H:i') }}
+								</i>
+							</p>
 							<p>{% if p['location'] %}<b>{{ p['location'] }}</b>{% else %}<i>lokace nezadána</i>{% endif %}</p>
 							<p>{{ p['perex'] }}</p>
 							{#<p>Obsazeno {{ p['occupied'] }} ze {{ p['capacity'] }}</p>#}
-							{% if (p['bringAlong']) %}<p>Sebou: {{ p['bringAlong'] }}</p>{% endif %}
+							{% if (p['tools']) %}<p>Sebou: {{ p['tools'] }}</p>{% endif %}
 
 							{% if(s['id'] == 2) %}
 								{#<a href="images/map-vzlet.png">#}

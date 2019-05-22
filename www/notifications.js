@@ -39,13 +39,21 @@ const showLocalNotification = (title, body, swRegistration) => {
 };
 
 const mainNotification = async () => {
+
 	check();
+
 	const swRegistration = await registerServiceWorker();
 	const permission = await requestNotificationPermission();
+    await navigator.serviceWorker.ready;
 
-	showLocalNotification(
-		'Super, teď už ti na Obroku nic neujde!',
-		'Nezapomeň prozkoumat ostatní části appky!',
-		swRegistration,
-	);
+    document.getElementById('notification-info').classList.remove('hide');
+
+    showLocalNotification(
+        'Super, teď už ti na Obroku nic neujde!',
+        'Nezapomeň prozkoumat ostatní části appky!',
+        swRegistration,
+    );
+
+
+
 };

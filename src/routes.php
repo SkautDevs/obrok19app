@@ -28,6 +28,8 @@ $app->get('/programy', function(Request $request, Response $response, array $arg
             continue;
         }
 
+        $program['multiday'] = date('Y-m-d', strtotime($program['start']['date'])) !== date('Y-m-d', strtotime($program['end']['date']));
+
 		$programSections[$program['section']['id']]['programs'][] = $program;
 	}
 
