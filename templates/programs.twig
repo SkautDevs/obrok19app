@@ -74,9 +74,13 @@
 									<img src="images/map-mayday.png" alt="Mapa M(a]yDay" />
 								{#</a>#}
                             {% elseif(s['id'] == 15) %}
-								{#<a href="images/map-velkahra.png">#}
-									<img src="images/map-velkahra.png" alt="Mapa Velká hra" />
-								{#</a>#}
+                                {#<a href="images/map-velkahra.png">#}
+								<img src="images/map-velkahra.png" alt="Mapa Velká hra" />
+                                {#</a>#}
+                            {% elseif(s['id'] == 17 || p['id'] == 27 || p['id'] == 28) %}
+                                {#<a href="images/map-netradicni-sporty.png">#}
+								<img src="images/map-netradicni-sporty.png" alt="Mapa Netradicni sporty" />
+                                {#</a>#}
                             {% endif %}
 						</div>
 					</div>
